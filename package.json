@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "node ./bin/www",
+    "start": "node ./bin/www",
+    "dev": "nodemon ./bin/www",
     "pm2": "pm2 start ./bin/www --name blog"
   },
   "dependencies": {
@@ -12,6 +13,7 @@
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
+    "nodemon": "^2.0.13",
     "pug": "2.0.0-beta11"
   }
 }
