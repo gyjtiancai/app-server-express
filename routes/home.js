@@ -63,8 +63,8 @@ router.get('/GetNotes', function (req, res, next) {
     console.log('req.stale：', req.stale) //true
     console.log('req.subdomains：', req.subdomains)  //[]
     console.log('req.xhr', req.xhr) //false
-    console.log("req.get('Content-Type')：",req.get('Content-Type'))  //application/json
-    console.log("req.is('application/json')：",req.is('application/json'))  //null
+    console.log("req.get('Content-Type')：", req.get('Content-Type'))  //application/json
+    console.log("req.is('application/json')：", req.is('application/json'))  //null
     const response = [
         { id: 1, title: 'React JS', image: reactImage, description: '渐进式JavaScript框架', createTime: Date.now() },
         { id: 2, title: 'Vue JS', image: vueImage, description: '用于构建用户界面的JavaScript库', createTime: Date.now() },
@@ -115,4 +115,7 @@ router.post('/CollectNotes', function (req, res, next) {
     })
 });
 
+router.get('/', function (req, res, next) {
+    res.render('home');
+});
 module.exports = router;

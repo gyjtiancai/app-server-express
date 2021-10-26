@@ -23,7 +23,7 @@ app.locals.author = 'geyujie'
 // console.dir(app.locals)
 
 // add view dir
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, 'views/ejs'));
 
 // add view engine
 app.set('view engine', 'ejs'); 
