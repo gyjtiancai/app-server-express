@@ -82,12 +82,12 @@
 }
 .good-icon {
     cursor: pointer;
-    font-size: 16px;
+    width: 16px;
+    height: 16px;
     transition: 0.2s;
 }
 .good-icon:hover {
-    font-size: 20px;
-    color: #4499c2;
+
 }
 .introduction-description {
     color: #262626;

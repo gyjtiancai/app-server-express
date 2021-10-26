@@ -60,7 +60,6 @@
         const months = new Array(12).fill(0).map((m, index) => 1 + index)
         const [year_now, month_now, day_now] = [new Date().getFullYear(), new Date().getMonth() + 1, new Date().getDate()]
         let currentCalendarDate = changeCalendarData(CalendarJs.getCalendarData(year_now, month_now));
-        console.log(currentCalendarDate)
         function isToday(cell) {
             return cell.id === `${year_now}/${month_now}/${day_now}`
         }
@@ -69,7 +68,6 @@
         }
         function changeCalendarData(calendarData) {
             const _calendarData = [];
-            // console.log(calendarData)
             calendarData.forEach((row, index) => {
                 if (index === 0) {
                     row = row.map((day) => {
@@ -142,7 +140,6 @@
                 }
                 _calendarData.push(row);
             });
-            // console.log(_calendarData)
             return _calendarData;
         }
         const Container = document.createElement('div')
@@ -176,7 +173,7 @@
             return (`<div class="note-option" key=${note.id}>
                             <img class="note-option-image" src=${note.image} alt="" />
                             <div class="note-option-introduction">
-                                <p class="introduction-title">${note.title}</p>
+                                <div class="introduction-title">${note.title}<div class="good-icon"><img src="images/good.png" /></div></div>
                                 <div class="introduction-description">${currentLanguage === 'CN' ? note.CNdescription : note.ENdescription}</div>
                             </div>
                         </div>`)
