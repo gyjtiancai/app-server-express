@@ -15,7 +15,7 @@
 <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root">
-
+        
     </div>
     <canvas id="hello-canvas" height="930" width="1920">你的浏览器不支持canvas</canvas>
     <style>
@@ -32,14 +32,14 @@
             top: 0;
         }
     </style>
+    <script src="javascripts/utils/language.js"></script>
     <script src="javascripts/canvas.js"></script>
     <script src="javascripts/header.js"></script>
     <script>
         const Container = document.createElement('div')
         Container.setAttribute('class','app-welcome')
-        
-        const Html = `<p class="welcome-title">${currentLanguage === 'CN' ? '欢迎!' : 'Welcome!'}</p>
-            <a href="/home"><button class="welcome-button">${currentLanguage === 'CN' ? '去主页' : 'go home page'}</button>
+        const Html = `<p class="welcome-title">${language === 'CN' ? '欢迎!' : 'Welcome!'}</p>
+            <a href="/home"><button class="welcome-button">${language === 'CN' ? '去主页' : 'go home page'}</button>
             </a>`
         Container.innerHTML = Html
         document.getElementById('root').appendChild(Container)

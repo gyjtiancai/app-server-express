@@ -32,6 +32,7 @@
             top: 0;
         }
     </style>
+    <script src="javascripts/utils/language.js"></script>
     <script src="javascripts/canvas.js"></script>
     <script src="javascripts/header.js"></script>
     <script src="javascripts/calendar.js"></script>
@@ -144,22 +145,21 @@
         }
         const Container = document.createElement('div')
         Container.setAttribute('class', 'app-home')
-        const Html = `<div class="app-home-title">${currentLanguage === 'CN' ? '个人笔记' : 'personal notes'}</div>
+        const Html = `<div class="app-home-title">${language === 'CN' ? '个人笔记' : 'personal notes'}</div>
             <div class="app-home-notes">
                 <div class="calendar">
                     <div class="calendar-header">
-                        <div class="">${MonthEnmu[month_now]} ${year_now}</div>
-
+                        ${language === 'CN' ? `<div>${year_now}年${month_now}月</div>` : `<div>${MonthEnmu[month_now]} ${year_now}</div>`}
                     </div>
                     <div class="calendar-table">
                         <div class="calendar-table-header">
-                            <div class="header-cell">${currentLanguage === 'CN' ? '一' : 'Mon'}</div>
-                            <div class="header-cell">${currentLanguage === 'CN' ? '二' : 'Tue'}</div>
-                            <div class="header-cell">${currentLanguage === 'CN' ? '三' : 'Wed'}</div>
-                            <div class="header-cell">${currentLanguage === 'CN' ? '四' : 'Thu'}</div>
-                            <div class="header-cell">${currentLanguage === 'CN' ? '五' : 'Fri'}</div>
-                            <div class="header-cell">${currentLanguage === 'CN' ? '六' : 'Sat'}</div>
-                            <div class="header-cell">${currentLanguage === 'CN' ? '日' : 'Sun'}</div>
+                            <div class="header-cell">${language === 'CN' ? '一' : 'Mon'}</div>
+                            <div class="header-cell">${language === 'CN' ? '二' : 'Tue'}</div>
+                            <div class="header-cell">${language === 'CN' ? '三' : 'Wed'}</div>
+                            <div class="header-cell">${language === 'CN' ? '四' : 'Thu'}</div>
+                            <div class="header-cell">${language === 'CN' ? '五' : 'Fri'}</div>
+                            <div class="header-cell">${language === 'CN' ? '六' : 'Sat'}</div>
+                            <div class="header-cell">${language === 'CN' ? '日' : 'Sun'}</div>
                         </div>
                         <div class="calendar-table-body">
                             ${currentCalendarDate.map((row, index) => `<div class="calendar-table-row" key=${index}>
@@ -174,7 +174,7 @@
                                         <img class="note-option-image" src=${note.image} alt="" />
                                         <div class="note-option-introduction">
                                             <div class="introduction-title">${note.title}<div class="good-icon"><img src="images/good.png" /></div></div>
-                                            <div class="introduction-description">${currentLanguage === 'CN' ? note.CNdescription : note.ENdescription}</div>
+                                            <div class="introduction-description">${language === 'CN' ? note.CNdescription : note.ENdescription}</div>
                                         </div>
                                     </div>`)
                     }).join("")}

@@ -14,7 +14,7 @@ let accessCount = 0
 
 //add index router log
 router.use(function timeLog(req, res, next) {
-  console.log('router time: ', Date.now())
+  // console.log('router time: ', Date.now())
   next()
 })
 
@@ -25,7 +25,7 @@ router.get('/', function (req, res, next) {
   fs.writeFile(path.join(__dirname, '../logs', 'access.log'), asscessWord, (err) => {
     if (err) throw err;
   });
-  res.render('index', { title: 'Express' });
+  res.render('index');
 });
 
 module.exports = router;

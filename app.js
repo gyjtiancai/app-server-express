@@ -13,7 +13,7 @@ var app = express();
 
 // app global logic
 app.all('*', function (req, res, next) {
-  console.log('global logic is login ...')
+  // console.log('global logic is login ...')
   next() // pass control to the next handler
 })
 
