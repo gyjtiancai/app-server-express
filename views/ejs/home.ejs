@@ -170,14 +170,14 @@
                 </div>
                 <div class="notes-container">
                     ${notes.map((note) => {
-            return (`<div class="note-option" key=${note.id}>
-                            <img class="note-option-image" src=${note.image} alt="" />
-                            <div class="note-option-introduction">
-                                <div class="introduction-title">${note.title}<div class="good-icon"><img src="images/good.png" /></div></div>
-                                <div class="introduction-description">${currentLanguage === 'CN' ? note.CNdescription : note.ENdescription}</div>
-                            </div>
-                        </div>`)
-        }).join("")}
+                        return (`<div class="note-option" key=${note.id}>
+                                        <img class="note-option-image" src=${note.image} alt="" />
+                                        <div class="note-option-introduction">
+                                            <div class="introduction-title">${note.title}<div class="good-icon"><img src="images/good.png" /></div></div>
+                                            <div class="introduction-description">${currentLanguage === 'CN' ? note.CNdescription : note.ENdescription}</div>
+                                        </div>
+                                    </div>`)
+                    }).join("")}
                 </div>
             </div>`
         Container.innerHTML = Html

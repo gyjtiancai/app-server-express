@@ -8,6 +8,7 @@
 .app-header-title {
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 .title-icon {
     width: 36px;
